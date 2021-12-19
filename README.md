@@ -1,2 +1,2 @@
 # algorithm
-baekjoon online judge or etc. algorithm study
+백준 온라인 저지 각 문제 번호별 성공한 코드를 모아놓은 곳
