@@ -2,6 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
+
 n = int(input())
 alpha_nums = [input()[:-1] for _ in range(n)]
 num_alpha_pair = dict()
