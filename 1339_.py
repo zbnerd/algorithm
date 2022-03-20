@@ -22,7 +22,6 @@ item = list(num_alpha_pair.items())
 
 # 숫자 알파벳 짝 value를 기준으로 내림차순 정렬
 item.sort(key = lambda x : x[1], reverse = True)
-
 value = 0
 
 # 정답 구하기
