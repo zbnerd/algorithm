@@ -13,9 +13,8 @@ void bfs(long long s, long long t){
     
     unordered_set<int> visited;
     queue<pair<long long, string> > q;
-    pair<long long, string> num_op_pair = make_pair(s, "");
     
-    q.push(num_op_pair);
+    q.push(make_pair(s, ""));
     visited.insert(s);
     
     while(!q.empty()){
@@ -28,29 +27,24 @@ void bfs(long long s, long long t){
             return;
         }
         
-        
         if((0 <= p*p && p*p <= max) && (visited.find(p*p) == visited.end())){ //p*p 방문안한경우
             visited.insert(p*p);
-            pair<long long, string> multiple = make_pair(p*p,op+"*");
-            q.push(multiple);
+            q.push(make_pair(p*p,op+"*"));
         }
         
         if((0 <= p+p && p+p <= max) && (visited.find(p+p) == visited.end())){ //p+p 방문안한경우
             visited.insert(p+p);
-            pair<long long, string> addition = make_pair(p+p,op+"+");
-            q.push(addition);
+            q.push(make_pair(p+p,op+"+"));
         }
         
         if((0 <= p-p && p-p <= max) && (visited.find(p-p) == visited.end())){ //p-p 방문안한경우
             visited.insert(p-p);
-            pair<long long, string> substract = make_pair(p-p,op+"-");
-            q.push(substract);
+            q.push(make_pair(p-p,op+"-"));
         }
         
         if((p != 0 && 0 <= p / p && p / p <= max) && visited.find(p/p) == visited.end()){ //p/p 방문안한경우
             visited.insert(p/p);
-            pair<long long, string> divide = make_pair(p/p,op+"/");
-            q.push(divide);
+            q.push(make_pair(p/p,op+"/"));
         }
     }
     cout << -1;
@@ -66,7 +60,6 @@ void solve(){
         cout << 0;
         return;
     }
-    
     
     bfs(s,t);
 }
