@@ -4,11 +4,13 @@
 #include <queue>
 
 using namespace std;
-int visited[201][201];
+
 int n;
 
 int bfs(pair<int, int> start, pair<int, int> end){
-	
+	int visited[201][201];
+    for(int i=0;i<201;i++) memset(visited[i], -1, sizeof(int) * 201);
+    
 	visited[start.first][start.second] = 0;
 	queue<pair<int, int> > q;
 	
@@ -39,8 +41,6 @@ int bfs(pair<int, int> start, pair<int, int> end){
 int main(){
 	
 	ios_base::sync_with_stdio(false); cin.tie(NULL);
-	
-	for(int i=0;i<201;i++) memset(visited[i], -1, sizeof(int) * 201);
 	
 	int r1, c1, r2, c2;
 	cin >> n >> r1 >> c1 >> r2 >> c2;
